@@ -79,7 +79,7 @@ const TodayPage = () => {
   return (
     <TodayPageContainer>
       <div>
-        Todaypage
+        Todaypage test
         <MyResponsiveRadar data={data} />
         {/* <ResponsiveRadar data={data} /> */}
       </div>
