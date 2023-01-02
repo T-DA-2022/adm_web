@@ -4,7 +4,7 @@ import { TopbarContainer } from "./Topbar.element";
 
 const Topbar = () => {
   return (
-    <TopbarContainer>
+    <TopbarContainer className="topbar">
       <div>Topbar</div>
     </TopbarContainer>
   );

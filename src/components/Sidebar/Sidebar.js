@@ -1,19 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { SidebarContainer } from "./Sidebar.element";
+import { SidebarContainer, SidebarItemContainer } from "./Sidebar.element";
 
 const Sidebar = () => {
   const sidebarMenu = [
-    { name: "dashboard", path: "/" },
-    { name: "today", path: "/today" },
-    { name: "quiz", path: "/quiz" },
+    { name: "Dashboard", path: "/" },
+    { name: "Today", path: "/today" },
+    { name: "Quiz", path: "/quiz" },
   ];
 
   const SidebarItem = ({ menu }) => {
     return (
-      <div className="SidebarItem">
+      <SidebarItemContainer className="SidebarItem">
         <p>{menu.name}</p>
-      </div>
+      </SidebarItemContainer>
     );
   };
 

@@ -5,9 +5,9 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Topbar from "./components/Topbar/Topbar";
 import Sidebar from "./components/Sidebar/Sidebar";
 
-import MainPage from "./pages/MainPage";
-import TodayPage from "./pages/TodayPage";
-import QuizPage from "./pages/QuizPage";
+import MainPage from "./pages/Mainpage/MainPage";
+import TodayPage from "./pages/Todaypage/TodayPage";
+import QuizPage from "./pages/Quizpage/QuizPage";
 
 function App() {
   return (
