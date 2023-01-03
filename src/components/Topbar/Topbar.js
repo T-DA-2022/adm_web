@@ -1,11 +1,19 @@
 import React from "react";
 
-import { TopbarContainer } from "./Topbar.element";
+import { TopbarContainer, TopbarMenuIconContainer } from "./Topbar.element";
 
-const Topbar = () => {
+import { MdMenu } from "react-icons/md";
+
+const Topbar = (props) => {
+  const SidebarWidthHandler = () => {
+    props.setSidebarOpen(!props.sidebarOpen);
+  };
   return (
-    <TopbarContainer className="topbar">
-      <div>Topbar</div>
+    <TopbarContainer width={props.width} className="topbar">
+      <TopbarMenuIconContainer>
+        <MdMenu size={36} onClick={SidebarWidthHandler} />
+      </TopbarMenuIconContainer>
+      Topbar
     </TopbarContainer>
   );
 };

@@ -1,0 +1,15 @@
+.carousel-item {
+  transition: transform 0.6s cubic-bezier(0.55, 0, 0.45, 1);
+}
+
+.carousel-control-prev {
+  left: -85px;
+}
+.carousel-control-next {
+  right: -85px;
+}
+
+.carousel-indicators {
+  position: relative;
+  top: 280px;
+}
