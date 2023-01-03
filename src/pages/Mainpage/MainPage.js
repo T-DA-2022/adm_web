@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import StudentCard from "../../components/StudentCard/Studentcard";
 import Carousel from "react-bootstrap/Carousel";
 
@@ -7,17 +7,25 @@ import {
   DatePickAreaContainer,
   DatePickerContainer,
   MainpageContainer,
+  CalendarConfirmDiv,
+  CalendarConfirmBtn,
 } from "./Mainpage.element";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Mainpage.custom.css";
 import UserList from "../../dummy/UserDummy";
 import CustomReactCalendar from "../../components/CustomReactCalendar/CustomReactCalendar";
+import DateStringGenerator from "../../hooks/DateStringGenerator";
 
 const MainPage = () => {
+  const [datepick, setDatePick] = useState(new Date());
+  const [calendarview, setCalendarView] = useState(true);
   const CustomDatePicker = () => {
     return (
-      <DatePickerContainer>
-        <></>
+      <DatePickerContainer
+        status={1 - calendarview}
+        onClick={() => setCalendarView(!calendarview)}
+      >
+        <>{DateStringGenerator(datepick)}</>
       </DatePickerContainer>
     );
   };
@@ -25,9 +33,17 @@ const MainPage = () => {
   return (
     <MainpageContainer>
       <DatePickAreaContainer>
-        <CalendarContainer>
-          <CustomDatePicker />
+        <CustomDatePicker />
+        <CalendarContainer status={calendarview}>
           <CustomReactCalendar />
+          <CalendarConfirmDiv>
+            <CalendarConfirmBtn onClick={() => setDatePick(new Date())}>
+              오늘
+            </CalendarConfirmBtn>
+            <CalendarConfirmBtn onClick={() => setCalendarView(!calendarview)}>
+              확인
+            </CalendarConfirmBtn>
+          </CalendarConfirmDiv>
         </CalendarContainer>
       </DatePickAreaContainer>
       <Carousel interval={null} variant="dark">
