@@ -14,8 +14,8 @@ const Sidebar = (props) => {
 
   const sidebarMenu = [
     { name: "메인페이지", path: "/" },
-    { name: "캘린더", path: "/calendar" },
-    { name: "학생 관리", path: "/today" },
+    { name: "오늘의 수업", path: "/today" },
+    { name: "학생 관리", path: "/student" },
     { name: "퀴즈 관리", path: "/quiz" },
   ];
 
@@ -30,6 +30,10 @@ const Sidebar = (props) => {
   return (
     <div className="Sidebar">
       <SidebarContainer width={props.width}>
+        <SidebarChevron onClick={SidebarWidthHandler}>
+          <MdChevronLeft size={24} />
+        </SidebarChevron>
+
         {sidebarMenu.map((item, index) => {
           return (
             <Link to={item.path} key={index} onClick={SidebarWidthHandler}>
@@ -37,9 +41,6 @@ const Sidebar = (props) => {
             </Link>
           );
         })}
-        <SidebarChevron onClick={SidebarWidthHandler}>
-          <MdChevronLeft size={24} />
-        </SidebarChevron>
       </SidebarContainer>
     </div>
   );
