@@ -9,6 +9,10 @@ import {
   MainpageContainer,
   CalendarConfirmDiv,
   CalendarConfirmBtn,
+  DatePickerDateDiv,
+  StudentCardArea,
+  StudentListArea,
+  StudentListIndiv,
 } from "./Mainpage.element";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Mainpage.custom.css";
@@ -18,14 +22,15 @@ import DateStringGenerator from "../../hooks/DateStringGenerator";
 
 const MainPage = () => {
   const [datepick, setDatePick] = useState(new Date());
-  const [calendarview, setCalendarView] = useState(true);
+  const [calendarview, setCalendarView] = useState(false);
+  const [cardData, setCardData] = useState(UserList[0]);
   const CustomDatePicker = () => {
     return (
       <DatePickerContainer
         status={1 - calendarview}
         onClick={() => setCalendarView(!calendarview)}
       >
-        <>{DateStringGenerator(datepick)}</>
+        <DatePickerDateDiv>{DateStringGenerator(datepick)}</DatePickerDateDiv>
       </DatePickerContainer>
     );
   };
@@ -46,14 +51,25 @@ const MainPage = () => {
           </CalendarConfirmDiv>
         </CalendarContainer>
       </DatePickAreaContainer>
-      <Carousel interval={null} variant="dark">
-        {/* get user by axios on chosen date */}
-        {UserList.map((data) => (
+      {/* <Carousel interval={null} variant="dark"> */}
+      {/* get user by axios on chosen date */}
+      {/* {UserList.map((data) => (
           <Carousel.Item key={data.id}>
             <StudentCard data={data} />
           </Carousel.Item>
         ))}
-      </Carousel>
+      </Carousel> */}
+      <StudentCardArea>
+        <StudentListArea>
+          {/* userlist => 오늘의 학생 리스트 */}
+          {UserList.map((data) => (
+            <StudentListIndiv onClick={() => setCardData(data)}>
+              {data.name}
+            </StudentListIndiv>
+          ))}
+        </StudentListArea>
+        <StudentCard data={cardData} />
+      </StudentCardArea>
     </MainpageContainer>
   );
 };
