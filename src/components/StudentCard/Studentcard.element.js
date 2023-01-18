@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const StudentCardContainer = styled.div`
   border: 1px solid black;
-  width: 50vw;
-  height: 25vw;
+  width: 520px;
+  height: 258px;
   display: flex;
   flex-direction: column;
   align-items: center;
