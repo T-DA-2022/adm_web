@@ -4,6 +4,6 @@ const DateStringGenerator = (date) => {
   var month = (date.getMonth() + 1).toString();
 
   var day = (date.getDay() + 1).toString();
-  return year + "년 " + month + "월 " + day + "일";
+  return year + "년\t\u00A0" + month + "월\t\u00A0" + day + "일";
 };
 export default DateStringGenerator;
