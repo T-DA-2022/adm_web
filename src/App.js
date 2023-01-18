@@ -8,8 +8,8 @@ import Topbar from "./components/Topbar/Topbar";
 import Sidebar from "./components/Sidebar/Sidebar";
 
 import MainPage from "./pages/Mainpage/MainPage";
-import CalendarPage from "./pages/Calendar/Calendar";
-import TodayPage from "./pages/Todaypage/TodayPage";
+import TodayPage from "./pages/Today/Today";
+import StudentPage from "./pages/StudentPage/StudentPage";
 import QuizPage from "./pages/Quizpage/QuizPage";
 
 function App() {
@@ -40,11 +40,11 @@ function App() {
             />
             <Routes>
               <Route exact path="/" element={<MainPage width={mainWidth} />} />
-              <Route
-                path="/calendar"
-                element={<CalendarPage width={mainWidth} />}
-              />
               <Route path="/today" element={<TodayPage width={mainWidth} />} />
+              <Route
+                path="/student"
+                element={<StudentPage width={mainWidth} />}
+              />
               <Route path="/quiz" element={<QuizPage width={mainWidth} />} />
             </Routes>
           </Center>
