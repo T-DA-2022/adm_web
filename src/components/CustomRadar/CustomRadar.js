@@ -1,11 +1,12 @@
 import React from "react";
 import { ResponsiveRadar } from "@nivo/radar";
 
-const MyResponsiveRadar = ({ data, legend_data }) => {
+const MyResponsiveRadar = ({ data, keys, legend_data }) => {
   return (
     <ResponsiveRadar
       data={data}
-      keys={["last_week", "this_week", "pro_debut"]}
+      // keys={["last_week", "this_week", "pro_debut"]}
+      keys={keys}
       indexBy="label"
       margin={{ top: 70, right: 80, bottom: 40, left: 80 }}
       borderColor={{ from: "color" }}
