@@ -81,6 +81,7 @@ const TodayPage = () => {
               selected={student}
               selectList={UserList}
               setStudent={setStudent}
+              optionWord="학생"
             />
           </NameSpan>
           <NameSpan>
